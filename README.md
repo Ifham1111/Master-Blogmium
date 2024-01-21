@@ -65,7 +65,7 @@ write the order what we are done p to now
 4. install react-router-dom
 5. install flowbite-react
 6. install tailwind css
-7. create page & routwa
+7. create page & router
 8. Header Component
 9. create & run the server
 10. connect db
