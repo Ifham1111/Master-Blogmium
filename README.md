@@ -74,4 +74,5 @@ write the order what we are done p to now
 13. create sign-up api route and pass the user data's via POST with the hash formate to env=crypt the password
 14. create middleware & a function to control the errors
 15. create sign-in & sign-up page
-16.
+16. create footer
+17.
