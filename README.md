@@ -75,4 +75,6 @@ write the order what we are done p to now
 14. create middleware & a function to control the errors
 15. create sign-in & sign-up page
 16. create footer
-17.
+17. sign page set uped with the sign in and with the jwt
+18. global state management redux
+19.
