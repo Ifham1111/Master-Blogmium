@@ -1,11 +1,11 @@
-import express from "express";
-import { signup, signin } from "../conrollers/auth.controller.js";
+import express from 'express';
+import { google, signin, signup } from '../conrollers/auth.controller.js';
 
 const router = express.Router();
 
-router.post("/signup", signup);
 
-//crete sign in router api
-router.post("/signin", signin);
+router.post('/signup', signup);
+router.post('/signin', signin);
+router.post('/google', google)
 
 export default router;
