@@ -65,6 +65,7 @@ export default function FooterCom() {
                         </div>
                     </div>
                 </div>
+                
                 <Footer.Divider />
                 <div className='w-full sm:flex sm:items-center sm:justify-between'>
                     <Footer.Copyright href='#' by="Ifham's Blog" year={new Date().getFullYear()} />
