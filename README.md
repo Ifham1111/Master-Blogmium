@@ -78,3 +78,6 @@ write the order what we are done p to now
 17. sign page set uped with the sign in and with the jwt
 18. global state management redux
 19.
+
+
+
