@@ -54,6 +54,7 @@ export default function FooterCom() {
 
                         <div>
                             <Footer.Title title='LEGAL' />
+                            
                             <Footer.LinkGroup col>
                                 <Footer.Link href='/' target='_blank' rel='noopener noreferrer'>
                                     Privacy Policy
