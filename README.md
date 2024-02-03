@@ -79,6 +79,3 @@ write the order what we are done p to now
 18. global state management redux
 19.
 20.
-
-
-
