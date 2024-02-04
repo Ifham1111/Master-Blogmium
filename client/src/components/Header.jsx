@@ -1,14 +1,16 @@
 import { Avatar, Button, Dropdown, Navbar, TextInput } from 'flowbite-react'
 import React from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
-import { FaMoon } from 'react-icons/fa'
+import { FaMoon, FaSun } from 'react-icons/fa'
 import { Link, useLocation } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import {blockquoteTheme} from "flowbite-react/lib/esm/components/Blockquote/theme.js";
+import { useSelector, useDispatch } from 'react-redux'
+import { toggleTheme } from "../redux/theme/themeSlice.js";
 
 export default function Header() {
-    const path = useLocation().pathname
-    const { currentUser } = useSelector(state => state.user)
+    const path = useLocation().pathname;
+    const { currentUser } = useSelector(state => state.user);
+    const { theme } = useSelector(state => state.theme);
+    const dispatch = useDispatch();
 
     return (
         <Navbar className='border-b-2'>
@@ -30,8 +32,13 @@ export default function Header() {
             </Button>
 
             <div className='flex gap-2 md:order-2'>
-                <Button className='w-12 h-10 hidden sm:inline' color='gray' pill>
-                    <FaMoon />
+                <Button
+                    className='w-12 h-10 hidden sm:inline'
+                    color='gray'
+                    pill
+                    onClick={() => dispatch(toggleTheme())}
+                >
+                    {theme === 'light' ? <FaSun /> : <FaMoon />}
                 </Button>
                 {currentUser ? (
                     <Dropdown
@@ -71,7 +78,7 @@ export default function Header() {
             </div >
 
             <Navbar.Collapse>
-                {/* //Innhere labar.link and the link creta 2 a tag in this no allowed to create like that so we are declare Navbar.link as div */}
+                {/* //Innhere labar.link and the link creta 2 a tag in this no allowed to create like thatso we are declare Navbar.link as div */}
                 <Navbar.Link active={path === "/"} as={'div'}>
                     <Link to='/'>
                         Home
