@@ -75,9 +75,9 @@ export default function SignIn() {
             className='semibold dark:text-white text-4xl'>
             <span
               className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-              Ifham's
+              Blog
             </span>
-            Blog
+            mium
           </Link>
           <p className='text-sm mt-5 font-bold'>
             Welcome to Ifham's Blog! This is a platform where you can explore a wide range of topics, from technology and programming to lifestyle and travel. Join our community of passionate bloggers and share your thoughts, experiences, and knowledge with the world. Sign up now to start your blogging journey!
