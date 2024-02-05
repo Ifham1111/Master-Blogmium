@@ -5,6 +5,7 @@ import DashProfile from "../components/DashProfile.jsx";
 export default function Dashboard() {
   const location = useLocation();
     const [tab, setTab] = useState('');
+
     useEffect(() => {
       const urlParams = new URLSearchParams(location.search);
       const tabForUrl = urlParams.get('tab');
@@ -13,7 +14,8 @@ export default function Dashboard() {
       }
       console.log(tabForUrl);
     }, [location]);
-  return (
+
+    return (
         <div className='min-h-screen flex flex-col md:flex-row'>
           <div className='md:w-55'>
             <DashSidebar />
