@@ -4,6 +4,8 @@ import React, {useEffect, useRef, useState} from "react";
 import {getStorage} from "firebase/storage";
 import {app} from "../firebase.js";
 import {ref, uploadBytesResumable, getDownloadURL} from "firebase/storage";
+import CircularProgressbar from "react-circular-progressbar";
+import 'react-circular-progressbar/dist/styles.css';
 export default function DashProfile() {
     const {currentUser} = useSelector(state => state.user);
     const [imageFile, setImageFile] = useState(null);
@@ -68,6 +70,10 @@ export default function DashProfile() {
                 <form className='flex flex-col gap-4'>
                     <input type="file" accept='image/*' onChange={handleImageChange} ref={filePickerRef} hidden/>
                     <div className="w-32 h-32 self-center cursor-pointer shadow-2xl overflow-hidden rounded-full" onClick={() => filePickerRef.current.click()}>
+                        {fileUploadProgress && (
+                            <CircularProgressbar value={fileUploadProgress || 0} text={`${fileUploadProgress}%`}
+                            strokeWidth={5} styles={{path: {stroke: 'purple'}, text: {fill: 'purple'}}}
+                            />)}
                         <img src={imageFileUrl || currentUser.profilePicture} alt="user" className='rounded-full w-full h-full object-cover border-8 border-[lightgray]' />
                     </div>
 
