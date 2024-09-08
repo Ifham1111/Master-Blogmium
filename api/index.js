@@ -1,8 +1,8 @@
 import { configDotenv } from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
-import userRoutes from './routes/user.route.js'
-import authRoutes from './routes/auth.route.js'
+import userRoutes from "./routes/user.route.js";
+import authRoutes from "./routes/auth.route.js";
 
 //configuring the dotenv
 configDotenv();
@@ -17,21 +17,22 @@ mongoose
     console.log("Connection failed!!!");
   });
 
-
 //creating the express app
 const app = express();
 
 //setting the body parser then pass the json from POST
 app.use(express.json());
 
-app.listen(8080, () => {
-  console.log("Server is running on port 8080!!!");
+app.listen(9000, () => {
+  console.log("Server is running on port 9000!!!");
 });
 
-
 //create a test api route
-app.use('/api/user', userRoutes);
-app.use('/api/auth', authRoutes);
+app.use("/test", (req, res, next) => {
+  res.json({ message: "Hello World" });
+});
+app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes);
 
 // create middleware & a function to control the errors
 app.use((err, req, res, next) => {
